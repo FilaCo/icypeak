@@ -3,11 +3,21 @@ name = "icypeak"
 version = "0.1.0"
 edition = "2024"
 
+[features]
+dev = ["iced/hot"]
+
 [dependencies]
-anyhow = { version = "1" }
 clap = { version = "4", features = ["derive"] }
-iced = { version = "0.14" }
+ctrlc = { version = "3" }
+daemonize = { version = "0.5" }
+directories = { version = "6" }
+iced = { version = "0.14", features = ["tokio"] }
+iced_aw = { version = "0.13" }
+inotify = { version = "0.11" }
+serde = { version = "1" }
+thiserror = { version = "2" }
 tokio = { version = "1", features = ["macros", "rt-multi-thread", "fs"] }
+toml = { version = "0.9" }
 tracing = { version = "0.1" }
 tracing-appender = { version = "0.2" }
 tracing-subscriber = { version = "0.3", features = ["env-filter"] }
